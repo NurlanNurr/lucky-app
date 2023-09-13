@@ -1,0 +1,51 @@
+.mainn {
+    background-color: #fc8410;
+    background-image: url('../images/backgroundleaves.png');
+    background-size: 700px 400px;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+
+.dropdown_category:hover .dropdown_category_child{
+  display: block;
+}
+
+.un {
+  background: 
+    linear-gradient(to right, #1068540c, #1068540c),
+    linear-gradient(to right, #106853, #106853);
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.un:hover {
+  background-size: 0 0.1em, 100% 0.1em;
+}
+
+.a {
+  background: linear-gradient(currentColor 0 0) 
+    bottom left/
+    var(--underline-width, 0%) 0.1em
+    no-repeat;
+  color: #f80;
+  display: inline-block;
+  padding: 0.5em 0em ;
+  text-decoration: none;
+  transition: background-size 300ms;
+}
+
+.a:hover {
+  --underline-width: 100%;
+}
+
+
+.bgimg{
+    background-image: url('../images/backgroundblueleave.png') , url(../images/backgroundyellowleave.png) ;
+    background-position-x: left , right;
+    background-position-y: 40% , 10%;
+    background-repeat:no-repeat; 
+    background-color: #f8f8f8; 
+  
+}
