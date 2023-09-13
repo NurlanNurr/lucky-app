@@ -24,7 +24,7 @@ const ProductCart = ({
       </div>
       <div className='w-[200px] h-[200px]'><img src={imageUrl} alt="" /></div>
       <p className=' pt-[35px] pb-[15px]'>{productName}</p> 
-      <span className='pb-[15px]'>{price} Azn</span>
+      <span className='pb-[15px]'>{price.toFixed(2)} Azn</span>
       <button className='  h-[47px] py-[10px] px-[20px] rounded-md border-2 text-black hover:bg-[#106853] hover:text-white hover:border-[#106853] transition ease-in-out duration-200  '>Səbətə at</button>
     </div>
   )

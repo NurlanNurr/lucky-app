@@ -4,6 +4,8 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
 import '../assets/styles/allstyle.scss'
 import { Link } from 'react-router-dom';
+import { categoryArray } from './CategoryData';
+import { subcategoryArray } from './SubcategoryDatas';
 
 const Header = () => {
   return (
@@ -34,14 +36,267 @@ const Header = () => {
             <li className='dropdown_category w-[550px] text-white h-[65px] items-center flex justify-center bg-[#106853] '>
               Kateqoriyalar
               <div className=' dropdown_category_child w-[438px] h-[398px] text-black bg-white border-2 absolute top-[65px] left-28  hidden z-[10] '>
-                <ul className='w-full flex flex-col gap-[16px] pt-[20px] '>
-                  <li className='  pb-[16px]  pl-[16px] w-full un '> <Link to=""> Ofis ləvazimatları</Link></li>
-                  <li className='  pb-[16px] pl-[16px] w-full un'> <Link to=""> Qida və içkilər</Link></li>
+                {/* <ul className='w-full flex flex-col gap-[16px] pt-[16px] '>
+                  <li className='  pb-[16px] pl-[16px] w-full onedrop un '> <Link to="" className='flex gap-3 items-center  text-[#303030] '>Ofis ləvazimatları</Link>
+                  <ul className='onechild absolute top-0 left-[100%] w-[213%] h-full bg-white shadow-lg hidden  '>
+                    <div className='flex flex-col flex-wrap w-full h-full px-[20px] py-[10px]'>
+                      {subcategoryArray?.length>0 &&
+                      subcategoryArray.map(sub)}
+                    </div>
+                  </ul>
+                  </li>
+                  <li className='  pb-[16px] pl-[16px] w-full un seconddrop'> <Link to=""> Qida və içkilər</Link>
+                  <ul className='secondchild absolute top-0 left-[100%] w-[213%] h-full bg-white shadow-lg hidden  '>
+                    <div className='flex flex-col flex-wrap w-full h-full px-[20px] py-[10px]'>
+                      
+                    </div>
+                  </ul>
+                  </li>
                   <li className='  pb-[16px] pl-[16px] un w-full'> <Link to=""> Təsərrüfat malları</Link></li>
                   <li className=' pb-[16px] pl-[16px] un w-full'> <Link to=""> Elektron avadanlıq</Link></li>
                   <li className='  pb-[16px] pl-[16px] un w-full'> <Link to=""> Dibçək gülləri</Link></li>
                   <li className='  pb-[16px] pl-[16px] un w-full'> <Link to=""> Hədiyyəlik </Link></li>
                   <li className='  pb-[16px] pl-[16px] un w-full'> <Link to=""> Coffee shop</Link></li>
+                </ul> */}
+                <ul className="  bg-white shadow   flex flex-col items-start  ">
+                  {categoryArray?.length > 0 &&
+                    categoryArray
+                      .filter((item) => item.id === 1)
+                      .map((product) => (
+                        <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                          <Link
+                            to=""
+                            className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                          >
+                            <img src={product.icon} alt="" />
+                            {product.name}
+                          </Link>
+                          <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                            <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                              {subcategoryArray?.length > 0 &&
+                                subcategoryArray
+                                  .filter((item) => item.categoryID === 1)
+                                  .map((product) => (
+                                    <li className="w-[32%] ">
+                                      <Link
+                                        to=""
+                                        className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                      >
+                                        {product.name}
+                                      </Link>
+                                    </li>
+                                  ))}
+                            </div>
+                          </ul>
+                        </li>
+                      ))}
+                  {categoryArray?.length > 0 &&
+                    categoryArray
+                      .filter((item) => item.id === 2)
+                      .map((product) => (
+                        <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                          <Link
+                            to=""
+                            className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                          >
+                            <img
+                              src={product.icon}
+                              alt=""
+                              className="w-[18px] h-[18px]"
+                            />
+                            {product.name}
+                          </Link>
+                          <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                            <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                              {subcategoryArray?.length > 0 &&
+                                subcategoryArray
+                                  .filter((item) => item.categoryID === 2)
+                                  .map((product) => (
+                                    <li className="w-[32%] ">
+                                      <Link
+                                        to=""
+                                        className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                      >
+                                        {product.name}
+                                      </Link>
+                                    </li>
+                                  ))}
+                            </div>
+                          </ul>
+                        </li>
+                      ))}
+                  {categoryArray?.length > 0 &&
+                    categoryArray
+                      .filter((item) => item.id === 3)
+                      .map((product) => (
+                        <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un ">
+                          <Link
+                            to=""
+                            className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                          >
+                            <img src={product.icon} alt="" />
+                            {product.name}
+                          </Link>
+                          <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                            <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                              {subcategoryArray?.length > 0 &&
+                                subcategoryArray
+                                  .filter((item) => item.categoryID === 3)
+                                  .map((product) => (
+                                    <li className="w-[32%] ">
+                                      <Link
+                                        to=""
+                                        className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                      >
+                                        {product.name}
+                                      </Link>
+                                    </li>
+                                  ))}
+                            </div>
+                          </ul>
+                        </li>
+                      ))}
+                  {categoryArray?.length > 0 &&
+                    categoryArray
+                      .filter((item) => item.id === 4)
+                      .map((product) => (
+                        <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                          <Link
+                            to=""
+                            className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                          >
+                            <img
+                              src={product.icon}
+                              alt=""
+                              className="w-[18px] h-[18px]"
+                            />
+                            {product.name}
+                          </Link>
+                          <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                            <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                              {subcategoryArray?.length > 0 &&
+                                subcategoryArray
+                                  .filter((item) => item.categoryID === 4)
+                                  .map((product) => (
+                                    <li className="w-[32%] ">
+                                      <Link
+                                        to=""
+                                        className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                      >
+                                        {product.name}
+                                      </Link>
+                                    </li>
+                                  ))}
+                            </div>
+                          </ul>
+                        </li>
+                      ))}
+                  {categoryArray?.length > 0 &&
+                    categoryArray
+                      .filter((item) => item.id === 5)
+                      .map((product) => (
+                        <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                          <Link
+                            to=""
+
+
+                            className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                          >
+                            <img
+                              src={product.icon}
+                              alt=""
+                              className="w-[18px] h-[18px]"
+                            />
+                            {product.name}
+                          </Link>
+                          <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                            <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                              {subcategoryArray?.length > 0 &&
+                                subcategoryArray
+                                  .filter((item) => item.categoryID === 5)
+                                  .map((product) => (
+                                    <li className="w-[32%] ">
+                                      <Link
+                                        to=""
+                                        className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                      >
+                                        {product.name}
+                                      </Link>
+                                    </li>
+                                  ))}
+                            </div>
+                          </ul>
+                        </li>
+                      ))}
+                  {categoryArray?.length > 0 &&
+                    categoryArray
+                      .filter((item) => item.id === 6)
+                      .map((product) => (
+                        <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                          <Link
+                            to=""
+                            className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                          >
+                            <img
+                              src={product.icon}
+                              alt=""
+                              className="w-[18px] h-[18px]"
+                            />
+                            {product.name}
+                          </Link>
+                          <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                            <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                              {subcategoryArray?.length > 0 &&
+                                subcategoryArray
+                                  .filter((item) => item.categoryID === 6)
+                                  .map((product) => (
+                                    <li className="w-[32%] ">
+                                      <Link
+                                        to=""
+                                        className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                      >
+                                        {product.name}
+                                      </Link>
+                                    </li>
+                                  ))}
+                            </div>
+                          </ul>
+                        </li>
+                      ))}
+                  {categoryArray?.length > 0 &&
+                    categoryArray
+                      .filter((item) => item.id === 7)
+                      .map((product) => (
+                        <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                          <Link
+                            to="" className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                          >
+                            <img
+                              src={product.icon}
+                              alt=""
+                              className="w-[18px] h-[18px]"
+                            />
+                            {product.name}
+                          </Link>
+                          <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                            <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                              {subcategoryArray?.length > 0 &&
+                                subcategoryArray
+                                  .filter((item) => item.categoryID === 7)
+                                  .map((product) => (
+                                    <li className="w-[32%] ">
+                                      <Link
+                                        to=""
+                                        className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                      >
+                                        {product.name}
+                                      </Link>
+                                    </li>
+                                  ))}
+                            </div>
+                          </ul>
+                        </li>
+                      ))}
                 </ul>
               </div>
             </li>
@@ -63,7 +318,7 @@ const Header = () => {
 
         </div>
 
-      </div>
+      </div >
     </>
   )
 }

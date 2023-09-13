@@ -24,7 +24,9 @@ const SliderforOffice = () => {
 
 
           {ProductsDatas?.length > 0 &&
-            ProductsDatas.map((product) => (
+            ProductsDatas
+            .filter((item) => item.bestSeller === true)
+            .map((product) => (
               <SwiperSlide>
                 <ProductCart
                   id={product.id}
