@@ -31,6 +31,7 @@ const SliderforOffice = () => {
                   productName={product.name}
                   price={product.price}
                   key={product.id}
+                  imageUrl={product.img}
                 />
               </SwiperSlide>
             ))}

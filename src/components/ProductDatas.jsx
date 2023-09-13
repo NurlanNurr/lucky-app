@@ -1,3 +1,57 @@
+import officeProduct_1_1 from '../assets/images/product/office/product-1-1.jpg'
+import officeProduct_1_2 from '../assets/images/product/office/product-1-2.jpg'
+import officeProduct_1_3 from '../assets/images/product/office/product-1-3.jpg'
+import officeProduct_1_4 from '../assets/images/product/office/product-1-4.jpg'
+import officeProduct_2_1 from '../assets/images/product/office/product-2-1.jpg'
+// import officeProduct_2_2 from '../assets/images/product/office/product-2-2.jpg'
+// import officeProduct_3_1 from '../assets/images/product/office/product-3-1.jpg'
+// import officeProduct_3_2 from '../assets/images/product/office/product-3-2.jpg'
+// import officeProduct_3_3 from '../assets/images/product/office/product-3-3.jpg'
+// import officeProduct_4_1 from '../image/product/office/product-4-1.jpg'
+// import officeProduct_4_2 from '../image/product/office/product-4-2.jpg'
+// import officeProduct_4_3 from '../image/product/office/product-4-3.jpg'
+// import officeProduct_5_1 from '../image/product/office/product-5-1.jpg'
+// import officeProduct_5_2 from '../image/product/office/product-5-2.jpg'
+// import officeProduct_5_3 from '../image/product/office/product-5-3.jpg'
+// import officeProduct_6_1 from '../image/product/office/product-6-1.jpg'
+// import officeProduct_6_2 from '../image/product/office/product-6-2.jpg'
+// import officeProduct_7_1 from '../image/product/office/product-7-1.jpg'
+// import officeProduct_7_2 from '../image/product/office/product-7-2.jpg'
+// import officeProduct_7_3 from '../image/product/office/product-7-3.jpg'
+// import officeProduct_8_1 from '../image/product/office/product-8-1.jpg'
+// import officeProduct_8_2 from '../image/product/office/product-8-2.jpg'
+// import officeProduct_9_1 from '../image/product/office/product-9-1.jpg'
+// import officeProduct_9_2 from '../image/product/office/product-9-2.jpg'
+// import officeProduct_9_3 from '../image/product/office/product-9-3.png'
+// import officeProduct_10_1 from '../image/product/office/product-10-1.jpg'
+// import officeProduct_10_2 from '../image/product/office/product-10-2.jpg'
+// import officeProduct_11_1 from '../image/product/office/product-11-1.jpg'
+// import officeProduct_11_2 from '../image/product/office/product-11-2.jpg'
+// import officeProduct_11_3 from '../image/product/office/product-11-3.jpg'
+// import officeProduct_12_1 from '../image/product/office/product-12-1.jpg'
+// import officeProduct_12_2 from '../image/product/office/product-12-2.jpg'
+// import officeProduct_12_3 from '../image/product/office/product-12-3.jpg'
+// import officeProduct_13_1 from '../image/product/office/product-13-1.jpg'
+// import officeProduct_13_2 from '../image/product/office/product-13-2.jpg'
+// import officeProduct_13_3 from '../image/product/office/product-13-3.jpeg'
+// import officeProduct_14_1 from '../image/product/office/product-14-1.png'
+// import officeProduct_14_2 from '../image/product/office/product-14-2.png'
+// import officeProduct_14_3 from '../image/product/office/product-14-3.jpg'
+// import officeProduct_14_4 from '../image/product/office/product-14-4.jpg'
+// import officeProduct_15_1 from '../image/product/office/product-15-1.jpg'
+// import officeProduct_15_2 from '../image/product/office/product-15-2.png'
+// import officeProduct_15_3 from '../image/product/office/product-15-3.png'
+// import officeProduct_16_1 from '../image/product/office/product-16-1.jpg'
+// import officeProduct_16_2 from '../image/product/office/product-16-2.jpg'
+// import officeProduct_17_1 from '../image/product/office/product-17-1.jpg'
+// import officeProduct_17_2 from '../image/product/office/product-17-2.jpg'
+// import officeProduct_17_3 from '../image/product/office/product-17-3.jpg'
+// import officeProduct_17_4 from '../image/product/office/product-17-4.png'
+// import officeProduct_18_1 from '../image/product/office/product-18-1.jpg'
+// import officeProduct_18_2 from '../image/product/office/product-18-2.jpg'
+// import officeProduct_18_3 from '../image/product/office/product-18-3.jpg'
+// import officeProduct_18_4 from '../image/product/office/product-18-4.png'
+
 export const ProductsDatas = [
     {
         id: 1,
@@ -5,7 +59,7 @@ export const ProductsDatas = [
         subcategoryID: 1,
         name: 'Ağardıcı "Dolphin" DC-99',
         price: 0.80,
-        // img: officeProduct_1_1,
+        img: officeProduct_1_1,
         oldPrice: 0,
         discount: false,
         isNew: false,
@@ -17,7 +71,7 @@ export const ProductsDatas = [
         subcategoryID: 1,
         name: 'Ağardıcı "Grosso" GCP05',
         price: 0.80,
-        // img: officeProduct_1_2,
+        img: officeProduct_1_2,
         oldPrice: 0,
         discount: false,
         isNew: false,
@@ -29,7 +83,7 @@ export const ProductsDatas = [
         subcategoryID: 1,
         name: 'Ağardıcı lent "Odven" 8702',
         price: 0.94,
-        // img: officeProduct_1_3,
+        img: officeProduct_1_3,
         oldPrice: 0,
         discount: false,
         isNew: true,
@@ -41,7 +95,7 @@ export const ProductsDatas = [
         subcategoryID: 1,
         name: 'Ağardıcı "Atlas" D12',
         price: 0.95,
-        // img: officeProduct_1_4,
+        img: officeProduct_1_4,
         oldPrice: 1.25,
         discount: true,
         isNew: false,
@@ -53,7 +107,7 @@ export const ProductsDatas = [
         subcategoryID: 2,
         name: 'Spirallı dəftər 96v (A5)',
         price: 2.10,
-        // img: officeProduct_2_1,
+        img: officeProduct_2_1,
         oldPrice: 0,
         discount: false,
         isNew: false,
