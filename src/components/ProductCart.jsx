@@ -9,7 +9,7 @@ const ProductCart = ({
   return (
     <div className='w-[310px] h-[420px] bg-white flex flex-col justify-center items-center'>
       <div className=' svg_heart flex justify-end w-full pr-[12px]'>
-        <div className="test"></div>
+        
       <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
