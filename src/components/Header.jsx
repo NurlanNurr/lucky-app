@@ -4,8 +4,8 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
 import '../assets/styles/allstyle.scss'
 import { Link } from 'react-router-dom';
-import { categoryArray } from './CategoryData';
-import { subcategoryArray } from './SubcategoryDatas';
+import { categoryArray } from './data/CategoryData';
+import { subcategoryArray } from './data/SubcategoryDatas';
 
 const Header = () => {
   return (
@@ -36,28 +36,7 @@ const Header = () => {
             <li className='dropdown_category w-[550px] text-white h-[65px] items-center flex justify-center bg-[#106853] '>
               Kateqoriyalar
               <div className=' dropdown_category_child w-[438px] h-[398px] text-black bg-white border-2 absolute top-[65px] left-28  hidden z-[10] '>
-                {/* <ul className='w-full flex flex-col gap-[16px] pt-[16px] '>
-                  <li className='  pb-[16px] pl-[16px] w-full onedrop un '> <Link to="" className='flex gap-3 items-center  text-[#303030] '>Ofis ləvazimatları</Link>
-                  <ul className='onechild absolute top-0 left-[100%] w-[213%] h-full bg-white shadow-lg hidden  '>
-                    <div className='flex flex-col flex-wrap w-full h-full px-[20px] py-[10px]'>
-                      {subcategoryArray?.length>0 &&
-                      subcategoryArray.map(sub)}
-                    </div>
-                  </ul>
-                  </li>
-                  <li className='  pb-[16px] pl-[16px] w-full un seconddrop'> <Link to=""> Qida və içkilər</Link>
-                  <ul className='secondchild absolute top-0 left-[100%] w-[213%] h-full bg-white shadow-lg hidden  '>
-                    <div className='flex flex-col flex-wrap w-full h-full px-[20px] py-[10px]'>
-                      
-                    </div>
-                  </ul>
-                  </li>
-                  <li className='  pb-[16px] pl-[16px] un w-full'> <Link to=""> Təsərrüfat malları</Link></li>
-                  <li className=' pb-[16px] pl-[16px] un w-full'> <Link to=""> Elektron avadanlıq</Link></li>
-                  <li className='  pb-[16px] pl-[16px] un w-full'> <Link to=""> Dibçək gülləri</Link></li>
-                  <li className='  pb-[16px] pl-[16px] un w-full'> <Link to=""> Hədiyyəlik </Link></li>
-                  <li className='  pb-[16px] pl-[16px] un w-full'> <Link to=""> Coffee shop</Link></li>
-                </ul> */}
+               
                 <ul className="  bg-white shadow   flex flex-col items-start  ">
                   {categoryArray?.length > 0 &&
                     categoryArray
@@ -304,8 +283,8 @@ const Header = () => {
             <li className='text-white a'>Yeni</li>
             <li className='text-white a'>Endirimlər</li>
             <li className='text-white a'>Ən çox satılanlar</li>
-            <li className='text-white a dropdown_category  '>
-              Şərtlər
+            <li className=' dropdown_category flex items-center  '>
+              <a href="" className='a text-white '>Şərtlər</a>
               <div className=' dropdown_category_child text-black bg-white border-2 absolute top-[65px] right-[235px] hidden  z-[10] '>
                 <ul className='w-full flex flex-col gap-[16px] pt-[20px]  '>
                   <li className='  pb-[16px] pr-[16px]  pl-[16px] w-full un '> <Link to=""> Çatdırılma</Link></li>

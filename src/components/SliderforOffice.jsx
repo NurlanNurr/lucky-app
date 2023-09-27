@@ -1,7 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Keyboard, Autoplay } from 'swiper/modules';
-import { ProductsDatas } from './ProductDatas';
+import { ProductsDatas } from './data/ProductDatas';
 import ProductCart from './ProductCart';
 import 'swiper/css';
 import 'swiper/css/navigation';

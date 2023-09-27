@@ -19,8 +19,20 @@
   background-repeat: no-repeat;
   transition: background-size 400ms;
 }
+.unf {
+  background: 
+    linear-gradient(to right, #1068540c, #1068540c),
+    linear-gradient(to right, #fc8410, #fc8410);
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
 
 .un:hover {
+  background-size: 0 0.1em, 100% 0.1em;
+}
+.unf:hover {
   background-size: 0 0.1em, 100% 0.1em;
 }
 
@@ -54,4 +66,9 @@
 }
 .seconddrop:hover .secondchild {
   display: block;
+}
+
+.hr {
+  border: 1px solid rgba(0, 0, 0, 0.094);
+  border-radius: 5px;
 }
