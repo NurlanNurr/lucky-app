@@ -14,7 +14,7 @@ function Products() {
   const { categoryName } = useParams();
   const { subcategoryName } = useParams();
   const [products, setProducts] = useState([]);
-
+  const [category, setCategory] = useState([]);
   
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(6)
@@ -24,7 +24,7 @@ function Products() {
       let category = categoryArray.find(
         (category) => category.name === categoryName
       );
-      //   console.log(category);
+      setCategory(category)
       if (category) {
         let filteredProducts = ProductsDatas.filter(
           (product) => product.categoryID === category.id
