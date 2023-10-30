@@ -3,7 +3,6 @@ import { categoryArray } from '../data/CategoryData';
 import { subcategoryArray } from '../data/SubcategoryDatas';
 import { ProductsDatas } from '../data/ProductDatas';
 import { orangeSectionData } from '../data/OrangeGreenData';
-// import { searchValues } from '../SearchValues';
 
 export const MainContext = createContext();
 

@@ -3,13 +3,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Keyboard, Autoplay } from 'swiper/modules';
 import { ProductsDatas } from './data/ProductDatas';
 import ProductCart from './ProductCart';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Pagecontainer from './Container';
+import { AddCart } from '../redux/cartSystem'
 
 const SliderforOffice = () => {
-
+  // const dispatch = useDispatch();
   return (
     <Pagecontainer>
       <div className='lg:mt-[0px] mt-[20px] pt-[30px] pb-[30px]'>
@@ -19,7 +21,6 @@ const SliderforOffice = () => {
           slidesPerView={4}
           autoplay={true}
           navigation
-          // className='w-full'
         >
 
 
@@ -34,6 +35,7 @@ const SliderforOffice = () => {
                   price={product.price}
                   key={product.id}
                   imageUrl={product.img}
+                 
                 />
               </SwiperSlide>
             ))}
