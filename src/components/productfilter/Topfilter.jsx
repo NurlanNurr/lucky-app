@@ -1,21 +1,21 @@
 import React from "react";
 
-const Topfilter = ({ setRecordsPerPage, products }) => {
+const Topfilter = ({ setRecordsPerPage, products , setProducts }) => {
 
 
   const handleSortChange = (e) => {
     const selectedValue = e.target.value;
+const sortedProducts =[...products]
 
     if (selectedValue === "cheapToExp") {
-      products.sort((a, b) => a.price - b.price);
+      sortedProducts.sort((a, b) => a.price - b.price);
     
     } else if (selectedValue === "expToCheap") {
-      products.sort((a, b) => b.price - a.price);
+      sortedProducts.sort((a, b) => b.price - a.price);
     }
 
-    setRecordsPerPage(products);
+    setProducts(sortedProducts);
   };
-
   return (
     <>
       <div className="flex items-start flex-row justify-center mb-[40px] w-[100%]">

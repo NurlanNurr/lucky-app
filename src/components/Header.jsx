@@ -3,19 +3,23 @@ import Pagecontainer from './Container'
 import { FaShoppingCart } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
 import '../assets/styles/allstyle.scss'
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { categoryArray } from './data/CategoryData';
 import { subcategoryArray } from './data/SubcategoryDatas';
 import Subcategorylist from './Subcategorylist';
 import { useSelector } from "react-redux";
-import Leftfilterall from './productfilter/Leftfilterall';
+import { MainContext } from "../components/context/AllContextProvider";
+import SearchCart from './SearchCart';
+// import Leftfilterall from './productfilter/Leftfilterall';
 
 const Header = () => {
   const cartObject = useSelector((state) => state.user.cart);
   const cart = Object.values(cartObject);
-
+  const { ProductsDatas } = useContext(MainContext);
   const [activeCategoryID, setActiveCategoryID] = useState(null);
   const [isDropdownVisible, setIsDropdownVisible] = useState(null);
+  const [filteredData, setFilteredData] = useState([]);
 
   const openSubMenu = (categoryId) => {
     setActiveCategoryID(categoryId);
@@ -33,6 +37,26 @@ const Header = () => {
   };
 
   const heartcartObject = useSelector((state) => state.user.heartcart);
+
+  const getInputValue = (e) => {
+    if (e.target.value.trim() === '') {
+      setFilteredData([]);
+    }
+    else {
+      const filterData = ProductsDatas.filter((item) => {
+        return item.name.toLowerCase().includes(e.target.value.toLowerCase());
+      });
+      setFilteredData(filterData);
+    }
+  };
+
+  const borderedDivStyle = {
+    maxHeight: "225px",
+    overflowY: "scroll",
+    border: "1px solid #red-800",
+    display: filteredData.length === 0 ? "none" : "block",
+
+  };
 
 
 
@@ -52,9 +76,30 @@ const Header = () => {
                 <img src={require('../assets/images/MainLogo.png')} alt="kvdjf" />
               </Link>
             </div>
+
+
             <div>
-              <input placeholder='Axtar' type="text" className='focus:outline-none w-[650px]  h-[55px] caret-white text-white py-[5px] px-[40px]  rounded-md placeholder:text-[white] bg-transparent border-2' />
+              <input
+                placeholder='Axtar'
+                type="text"
+                onChange={getInputValue}
+                className='focus:outline-none w-[650px]  h-[55px] caret-white text-white py-[5px] px-[40px]  rounded-md placeholder:text-[white] bg-transparent border-2' />
+
+              <div style={borderedDivStyle} 
+              className="w-[650px] bg-white border-red-800 border z-[99999] absolute  gap-[50px]">
+                {filteredData.map((item) => (
+                  <SearchCart
+                    productName={item.name}
+                    imageUrl={item.img}
+                    id={item.id}
+                    price={item.price}
+                    oldprice={item.oldprice}
+                  />
+                ))}
+              </div>
             </div>
+
+
             <div className='flex gap-[16px]'>
               <div >
                 <Link to="/Səbət">
@@ -64,44 +109,43 @@ const Header = () => {
               </div>
 
               <div>
-              <Link to="/HeartCartsBox">
-                <FaHeart className='text-[white] w-8 h-8' />
-                {heartcartObject.length}
+                <Link to="/HeartCartsBox">
+                  <FaHeart className='text-[white] w-8 h-8' />
+                  {heartcartObject.length}
                 </Link>
-                </div>
+              </div>
             </div>
           </div>
         </Pagecontainer>
         <div className='relative' >
           <ul className='flex justify-between items-center pr-[200px] '>
-            <li  className='dropdown_category w-[550px] text-white h-[65px] items-center flex justify-center bg-[#106853] ' onMouseEnter={openCatMenu} >
+            <li className='dropdown_category w-[550px] text-white h-[65px] items-center flex justify-center bg-[#106853] ' onMouseEnter={openCatMenu} >
               Kateqoriyalar
               <ul
-                className={` bg-white shadow flex flex-col dropdown_category_child items-start w-[438px] h-[398px] text-black bg-white border-2 absolute top-[65px] left-28 hidden z-[100] ${
-                  isDropdownVisible ? 'z-[-10]' : ''
-                }`}
+                className={` bg-white shadow flex flex-col dropdown_category_child items-start w-[438px] h-[398px] text-black bg-white border-2 absolute top-[65px] left-28 hidden z-[100] ${isDropdownVisible ? 'z-[-10]' : ''
+                  }`}
               >
-                  {categoryArray?.length > 0 &&
-                    categoryArray.map((category) => (
-                      <li   className=" py-[4px] px-12 border-b-[1px] w-full flex onedrop un" onClick={closeCatMenu} onMouseEnter={() => openSubMenu(category.id)} onMouseLeave={closeSubMenu} >
-                        <Link
-                          to={`/products/${encodeURIComponent(category.name)}`}
-                          className=" flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                          
-                        >
-                          <img className='w-[10px] h-[10px]' src={category.icon} alt="catname"/>
-                          {category.name}
-                        </Link>
+                {categoryArray?.length > 0 &&
+                  categoryArray.map((category) => (
+                    <li className=" py-[4px] px-12 border-b-[1px] w-full flex onedrop un" onClick={closeCatMenu} onMouseEnter={() => openSubMenu(category.id)} onMouseLeave={closeSubMenu} >
+                      <Link
+                        to={`/products/${encodeURIComponent(category.name)}`}
+                        className=" flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
 
-                        <div className={`${activeCategoryID === category.id ? 'flex absolute bottom-0 left-[435px]' : 'hidden absolute bottom-0 left-[500px]'}`}>
+                      >
+                        <img className='w-[10px] h-[10px]' src={category.icon} alt="catname" />
+                        {category.name}
+                      </Link>
 
-                          <Subcategorylist category={category} closeSubMenu={closeSubMenu}  />
-                       
-                        </div>
-                      </li>
+                      <div className={`${activeCategoryID === category.id ? 'flex absolute bottom-0 left-[435px]' : 'hidden absolute bottom-0 left-[500px]'}`}>
 
-                    ))}
-                </ul>
+                        <Subcategorylist category={category} closeSubMenu={closeSubMenu} />
+
+                      </div>
+                    </li>
+
+                  ))}
+              </ul>
             </li>
             <li className='text-white a'>Haqqımızda</li>
             <li className='text-white a'>Yeni</li>

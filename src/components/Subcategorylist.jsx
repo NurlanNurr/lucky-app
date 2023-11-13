@@ -16,7 +16,6 @@ function Subcategorylist({category}){
     }
     setSubcategories([...filteredSubcategories]);
   },[category])
-  console.log(category);
   return (
     <div className='bg-white w-[500px] h-[396px]'>
          <ul>
