@@ -13,10 +13,11 @@ function Products() {
   const { categoryName } = useParams();
   const { subcategoryName } = useParams();
   const [products, setProducts] = useState([]);
+  const [productsForFilter, setProductsForFilter] = useState([]);
   const [category, setCategory] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(6)
-
+// console.log(productsForFilter);
   useEffect(() => {
     if (categoryName && !subcategoryName) {
       let category = categoryArray.find(
@@ -45,12 +46,12 @@ function Products() {
       }
     }
     
-  }, [categoryName, subcategoryName, categoryArray, ProductsDatas]);
+  }, [categoryName, subcategoryName]);
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-  const currentRecords = products.slice(indexOfFirstRecord, indexOfLastRecord);
-  const nPages = Math.ceil(products.length / recordsPerPage)
+  const currentRecords = productsForFilter.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(productsForFilter.length / recordsPerPage)
 
   return (
     <>
@@ -65,7 +66,7 @@ function Products() {
                 categoryName && !subcategoryName ? "hidden" : "block"
               }`}
             >
-              <Leftfilter />
+              <Leftfilter products={products}  setProducts={setProducts}  setProductsForFilter={setProductsForFilter} />
             </div>
             <div
               className={` flex items-start flex-row justify-center mb-[40px] w-[33%] ${
@@ -84,8 +85,12 @@ function Products() {
                         id={product.id}
                         productName={product.name}
                         price={product.price}
+                        oldPrice={product.oldPrice}
                         imageUrl={product.img}
                         key={product.id}
+                        isNew={product.isNew}
+                        discount={product.discount}
+                        bestSeller={product.bestSeller}
                       />
                     ))}
                      <Pagination nPages={nPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />       

@@ -122,8 +122,7 @@ const Header = () => {
             <li className='dropdown_category w-[550px] text-white h-[65px] items-center flex justify-center bg-[#106853] ' onMouseEnter={openCatMenu} >
               Kateqoriyalar
               <ul
-                className={` bg-white shadow flex flex-col dropdown_category_child items-start w-[438px] h-[398px] text-black bg-white border-2 absolute top-[65px] left-28 hidden z-[100] ${isDropdownVisible ? 'z-[-10]' : ''
-                  }`}
+                className={` bg-white shadow  flex-col dropdown_category_child items-start w-[438px] h-[398px] text-black border-2 absolute top-[65px] left-28 hidden z-[10] ${isDropdownVisible ? 'z-[-999]' : '' }`}
               >
                 {categoryArray?.length > 0 &&
                   categoryArray.map((category) => (
@@ -134,7 +133,7 @@ const Header = () => {
 
                       >
                         <img className='w-[10px] h-[10px]' src={category.icon} alt="catname" />
-                        {category.name}
+                       {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
                       </Link>
 
                       <div className={`${activeCategoryID === category.id ? 'flex absolute bottom-0 left-[435px]' : 'hidden absolute bottom-0 left-[500px]'}`}>
